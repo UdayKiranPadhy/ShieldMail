@@ -1,0 +1,15 @@
+version: "3.10"
+
+services:
+  python:
+    build:
+      dockerfile: dockerfiles/python/Dockerfile
+      context: .
+    ports:
+      - "8000:80"
+    volumes:
+      - ".:/code"
+    environment:
+      ROLE: api
+    env_file:
+      - .env
