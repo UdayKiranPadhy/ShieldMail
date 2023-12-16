@@ -10,24 +10,25 @@ on:
 jobs:
   Check-Code:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-
     - name: Setup Python 3.11
       uses: actions/setup-python@v5
       with:
         python-version: 3.11
-
+    - name: Create virtualenv
+      run: |
+        make build
     - name: Install dependencies
       run: |
         make install-requirements
-
     - name: Run Format
       run: |
         make format-check
-
     - name: Run Linters
       run: |
         make lint-check
+    - name: Run Tests
+      run: |
+        make test

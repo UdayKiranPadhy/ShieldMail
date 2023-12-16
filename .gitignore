@@ -1,3 +1,7 @@
 .env
 .ruff_cache
 .mypy_cache
+.test-reports
+.coverage
+.mutmut-cache
+.venv
