@@ -9,6 +9,10 @@ python = "^3.11"
 fastapi = "^0.105.0"
 uvicorn = {extras = ["standard"], version = "^0.24.0.post1"}
 httpx = "^0.25.2"
+pydantic-settings = "^2.1.0"
+lagom = "^2.6.0"
+python-dotenv = "^1.0.0"
+logtail-python = "^0.2.9"
 
 
 [tool.poetry.group.dev.dependencies]
