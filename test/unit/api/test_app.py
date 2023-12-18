@@ -2,7 +2,7 @@ import unittest
 
 
 class TestApp(unittest.TestCase):
-    def test_app(self):
+    def test_app(self) -> None:
         from src.api.app import app
 
         self.assertIsNotNone(app)
