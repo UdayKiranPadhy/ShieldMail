@@ -17,12 +17,10 @@ async def read_root(
     config: Annotated[Config, container.depends(Config)],
 ) -> FastAPIResponse:
     domain = request.base_url
-    print(
-        f"https://accounts.google.com/o/oauth2/v2/auth?client_id={config.google_oauth.client_id}&redirect_uri={domain}{config.google_oauth.redirect_uri}&response_type=code&scope=openid"
-    )
+    logger.info("Came here with timmerman")
     return FastAPIResponse(
         status_code=302,
         headers={
-            "Location": f"https://accounts.google.com/o/oauth2/v2/auth?client_id={config.google_oauth.client_id}&redirect_uri={domain}{config.google_oauth.redirect_uri}&response_type=code&scope=openid&state=1234567890"
+            "Location": f"https://accounts.google.com/o/oauth2/v2/auth?client_id={config.google_oauth.client_id}&redirect_uri={domain}{config.google_oauth.redirect_uri}&response_type=code&scope=profile&state=1234567890"
         },
     )
